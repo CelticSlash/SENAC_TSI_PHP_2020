@@ -1,7 +1,7 @@
 <?php
-    $dsn = 'mysql:dbname=banco_teste;host=localhost';
-    $user = 'root';
-    $password = '';
+    $dsn = 'sqlsrv:Server=localhost\\SQLEXPRESS;Database=banco_teste';
+    $user = 'sa';
+    $password = 'bdsenac';
 
     $db = new PDO($dsn, $user, $password);
 
@@ -9,5 +9,5 @@
 
     foreach($db->query($sql) as $registro)
     {
-        echo "Nome: {$registro{'nome'} Telefone: {$registro['telefone']}<br>\n";
+        echo "Nome: {$registro['nome']} <br> Telefone: {$registro['telefone']}<br>\n";
     }
